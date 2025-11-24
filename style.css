@@ -1,0 +1,286 @@
+/* ROOT THEME */
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #7b8292;
+  --accent: #2f6fe0;
+  --accent-hover: #407cf0;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0,0,0,0.06);
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+* { margin: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* APP WRAPPER */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #2f6fe0, #4b80ff);
+  color: white;
+  padding: 22px;
+  margin: 20px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nav {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.nav-item.active {
+  background: rgba(255,255,255,0.22);
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+.icon-btn {
+  background: var(--card);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.search {
+  padding: 10px 14px;
+  border: 1px solid #dde2ea;
+  border-radius: 10px;
+}
+
+.avatar {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MAIN CONTENT */
+.content {
+  width: 100%;
+  padding: 0 25px 40px 25px;
+}
+
+/* ⚡ FULL-WIDTH CARDS (Option A) */
+.page .card {
+  width: 100%;
+  margin: 20px 0;
+  padding: 22px;
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+/* HEADINGS IN CARD */
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* GRID SYSTEM */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.top-gap {
+  margin-top: 20px;
+}
+
+/* STAT CARDS */
+.stat-title {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.stat-muted {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* TABLES */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.table th {
+  padding: 12px 10px;
+  color: var(--muted);
+  font-size: 13px;
+  border-bottom: 1px solid #e6e9ef;
+}
+
+.table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+/* TAGS */
+.tag {
+  padding: 6px 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.tag.green { background: #e9f7ef; color: #1d8f46; }
+.tag.red { background: #fde8e8; color: #d62828; }
+
+/* BUTTONS */
+.btn {
+  padding: 10px 16px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:hover { background: var(--accent-hover); }
+
+.btn.small { padding: 6px 10px; font-size: 13px; }
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #d4d7dd;
+  color: var(--muted);
+}
+
+.btn.red { background: #ff4b4b; }
+
+/* FULL-WIDTH FORM FIELDS */
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d8dde6;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+}
+
+/* FORM GRID (FULL-WIDTH) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.full { grid-column: 1 / -1; }
+
+/* PAGE FADE */
+.page {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.35s ease;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden { display: none !important; }
+
+/* LOADING BAR */
+.loader {
+  height: 5px;
+  background: linear-gradient(90deg, #bcd3ff, #4b80ff, #bcd3ff);
+  background-size: 200%;
+  animation: load 1s linear infinite;
+  display: none;
+}
+
+@keyframes load {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 259px;
+  color: var(--muted);
+  padding-bottom: 30px;
+}

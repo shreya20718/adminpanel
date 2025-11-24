@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Optimate — Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOADING BAR -->
+<div id="pageLoader" class="loader"></div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <img src="logo.png" class="brand-logo" />
+      <div class="brand-text">
+        <div class="name">Optimate</div>
+        <div class="muted">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-page="dashboard">🏠 Dashboard</button>
+      <button class="nav-item" data-page="landing">🖼 Landing Page</button>
+      <button class="nav-item" data-page="uiux">🎛 UI / UX</button>
+      <button class="nav-item" data-page="users">👥 Users</button>
+      <button class="nav-item" data-page="subscriptions">💳 Subscriptions</button>
+      <button class="nav-item" data-page="logos">🔖 Logos</button>
+      <button class="nav-item" data-page="measurement">📐 Measurements</button>
+      <button class="nav-item" data-page="files">🔗 File Sharing</button>
+      <button class="nav-item" data-page="analytics">📊 Analytics</button>
+      <button class="nav-item" data-page="revenue">💰 Revenue</button>
+      <button class="nav-item" data-page="logs">🔒 Security Logs</button>
+      <button class="nav-item" data-page="push">🔔 Push Notify</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="collapseBtn" class="ghost">Collapse</button>
+      <div class="version">v1.0.0</div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="left">
+        <button id="menuToggle" class="icon-btn">☰</button>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+      <div class="right">
+        <input id="searchInput" placeholder="Search users, plans, logs..." class="search" />
+        <div class="avatar">SG</div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <section class="content">
+
+
+      <!-- ========== DASHBOARD ========== -->
+      <section id="dashboard" class="page active">
+
+        <div class="grid-4">
+          <div class="card stat">
+            <div class="stat-title">Total Users</div>
+            <div class="stat-value">14,320</div>
+            <div class="stat-muted">+4.2% last month</div>
+          </div>
+
+          <div class="card stat">
+            <div class="stat-title">Active Today</div>
+            <div class="stat-value">1,042</div>
+            <div class="stat-muted">Sessions: 2,305</div>
+          </div>
+
+          <div class="card stat">
+            <div class="stat-title">Calib. Success</div>
+            <div class="stat-value">92.6%</div>
+            <div class="stat-muted">Avg across devices</div>
+          </div>
+
+          <div class="card stat">
+            <div class="stat-title">Monthly Revenue</div>
+            <div class="stat-value">₹1,45,320</div>
+            <div class="stat-muted">MRR growth 8.4%</div>
+          </div>
+        </div>
+
+        <div class="grid-2 top-gap">
+
+          <div class="card">
+            <div class="card-head">
+              <h3>Recent Users</h3>
+              <button class="btn small ghost">Export CSV</button>
+            </div>
+
+            <table class="table">
+              <thead>
+                <tr><th>User</th><th>Email</th><th>Plan</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Shreya G</td><td>shreya@example.com</td><td>Pro</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td>John D</td><td>john@example.com</td><td>Free</td><td><span class="tag red">Blocked</span></td></tr>
+                <tr><td>Asha K</td><td>asha@clinic.in</td><td>Enterprise</td><td><span class="tag green">Active</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3>Quick Actions</h3>
+            </div>
+            <div class="actions">
+              <button class="btn">Create Plan</button>
+              <button class="btn outline">Upload Logo</button>
+              <button class="btn ghost">Revoke Links</button>
+            </div>
+
+            <hr/>
+
+            <h4>Recent Logs</h4>
+            <ul class="logs">
+              <li><strong>Calibration:</strong> Device X completed by Shreya.</li>
+              <li><strong>File:</strong> Measurement uploaded (Asha).</li>
+              <li><strong>Subscription:</strong> John downgraded.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== LANDING PAGE CONTROL ========== -->
+      <section id="landing" class="page hidden">
+
+        <div class="card">
+          <div class="card-head"><h3>Landing Page Control</h3></div>
+
+          <div class="form-grid">
+
+            <div class="full">
+              <label>Upload Screenshots</label>
+              <input type="file" multiple />
+            </div>
+
+            <div class="full">
+              <label>Contact Us Text</label>
+              <textarea placeholder="Enter contact details..."></textarea>
+            </div>
+
+            <div>
+              <label>Enable Signup Option</label>
+              <div class="switch">
+                <input id="signupToggle" type="checkbox">
+                <label for="signupToggle"></label>
+              </div>
+            </div>
+
+            <div class="full actions-row">
+              <button class="btn">Save Changes</button>
+              <button class="btn outline">Publish</button>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== UI/UX CONTROL ========== -->
+      <section id="uiux" class="page hidden">
+
+        <div class="card">
+          <div class="card-head"><h3>UI / UX Controls</h3></div>
+
+          <div class="form-grid">
+
+            <div>
+              <label>Theme Color</label>
+              <input type="color" id="themeColor" value="#2f6fe0" />
+            </div>
+
+            <div>
+              <label>Toggle Feature (User-side)</label>
+              <div class="switch">
+                <input id="featureToggle" type="checkbox">
+                <label for="featureToggle"></label>
+              </div>
+            </div>
+
+            <div>
+              <label>Language</label>
+              <select id="langSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="mr">Marathi</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label>Localized Content</label>
+              <textarea placeholder="Write language-specific content..."></textarea>
+            </div>
+
+            <div class="full"><button class="btn">Save UI/UX Settings</button></div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== USERS PAGE ========== -->
+      <section id="users" class="page hidden">
+
+        <div class="card">
+
+          <div class="card-head"><h3>User Management</h3></div>
+
+          <div class="table-actions">
+            <input placeholder="Search user..." />
+            <button class="btn small">Add User</button>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr><th>User</th><th>Email</th><th>Role</th><th>Joined</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shreya</td><td>shreya@example.com</td><td>Admin</td><td>2025-07-04</td>
+                <td><button class="btn small outline">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== SUBSCRIPTIONS PAGE ========== -->
+      <section id="subscriptions" class="page hidden">
+
+        <div class="card">
+          <div class="card-head"><h3>Subscription & Plan Management</h3></div>
+
+          <div class="form-grid">
+
+            <div>
+              <label>Plan Name</label>
+              <input />
+            </div>
+
+            <div>
+              <label>Price (₹)</label>
+              <input type="number" />
+            </div>
+
+            <div>
+              <label>User Device Limit</label>
+              <input type="number" placeholder="Maximum devices allowed" />
+            </div>
+
+            <div class="full">
+              <button class="btn">Add Plan</button>
+            </div>
+
+          </div>
+
+          <hr/>
+
+          <h4>Monitor Renewals</h4>
+          <table class="table">
+            <thead>
+              <tr><th>User</th><th>Plan</th><th>Expiry Date</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shreya</td><td>Pro</td><td>2025-12-04</td>
+                <td><span class="tag green">Active</span></td>
+              </tr>
+              <tr>
+                <td>John</td><td>Free</td><td>Expired</td>
+                <td><span class="tag red">Expired</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== LOGOS PAGE ========== -->
+      <section id="logos" class="page hidden">
+        <div class="card">
+          <h3>Sponsor & Logo Manager</h3>
+          <input type="file" />
+        </div>
+      </section>
+
+
+
+      <!-- ========== MEASUREMENT PAGE ========== -->
+      <section id="measurement" class="page hidden">
+        <div class="card">
+          <h3>Measurement Data Viewer</h3>
+        </div>
+      </section>
+
+
+
+      <!-- ========== FILE SHARING PAGE ========== -->
+      <section id="files" class="page hidden">
+
+        <div class="card">
+          <h3>Encrypted File Sharing</h3>
+
+          <div class="form-grid">
+            <div>
+              <label>Create Link (Expiry days)</label>
+              <input type="number" placeholder="7" />
+            </div>
+
+            <div class="full actions-row">
+              <button class="btn">Generate Link</button>
+            </div>
+          </div>
+
+          <hr/>
+
+          <h4>All Generated Links</h4>
+
+          <table class="table">
+            <thead>
+              <tr><th>Link</th><th>User</th><th>Expiry</th><th>Actions</th></tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>https://optimate.com/s/v9hsd</td>
+                <td>Shreya</td>
+                <td>2025-12-04</td>
+                <td><button class="btn small red">Revoke</button></td>
+              </tr>
+
+              <tr>
+                <td>https://optimate.com/s/a92jd</td>
+                <td>Asha</td>
+                <td>2025-12-08</td>
+                <td><button class="btn small red">Revoke</button></td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ========== ANALYTICS PAGE ========== -->
+      <section id="analytics" class="page hidden">
+        <div class="card">
+          <h3>Analytics</h3>
+          <div class="chart-placeholder">Charts go here</div>
+        </div>
+      </section>
+
+
+
+      <!-- ========== REVENUE PAGE ========== -->
+      <section id="revenue" class="page hidden">
+        <div class="card">
+          <h3>Revenue Dashboard</h3>
+        </div>
+      </section>
+
+
+
+      <!-- ========== LOGS PAGE ========== -->
+      <section id="logs" class="page hidden">
+        <div class="card">
+          <h3>Security Logs</h3>
+        </div>
+      </section>
+
+
+
+      <!-- ========== PUSH NOTIFICATIONS PAGE ========== -->
+      <section id="push" class="page hidden">
+        <div class="card">
+          <h3>Push Notifications</h3>
+          <textarea placeholder="Write notification message..."></textarea>
+          <button class="btn">Send Notification</button>
+        </div>
+      </section>
+
+
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2025 Optimate</div>
+      <div class="muted">Made with ♥</div>
+    </footer>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
